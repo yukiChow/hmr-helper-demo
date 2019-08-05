@@ -52,7 +52,15 @@
                   "maximumError": "5mb"
                 }
               ]
-            }
+            },
+            "hmr": {
+              "fileReplacements": [
+                  {
+                      "replace": "src/environments/environment.ts",
+                      "with": "src/environments/environment.hmr.ts"
+                  }
+              ]
+          }
           }
         },
         "serve": {
@@ -63,6 +71,11 @@
           "configurations": {
             "production": {
               "browserTarget": "hmr-test:build:production"
+            },
+            "hmr": {
+                "hmr": true,
+                "browserTarget": "hmr-test:build:hmr",
+                "hmrWarning": false
             }
           }
         },
